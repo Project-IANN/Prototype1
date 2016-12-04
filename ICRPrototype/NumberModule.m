@@ -26,7 +26,7 @@ grayj2=uint8(j2);
 for i=1:28,
   for j=1:28,
     if j2(i,j)==1,
-        grayj2(i,j)=Photo(i,j);
+        grayj2(i,j)=Photo(i,j)+50;
       end;
     end;
   end;
