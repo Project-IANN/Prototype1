@@ -4,18 +4,18 @@ X=loadMNISTImages('train-images.idx3-ubyte');
 
 
 # We use 1000 datasets for our training. i.e m=1000.
-X=X(:,1:1000);
-A = ones(1,1000);
+X=X(:,1:10000);
+A = ones(1,10000);
 #Adding x0=1 as for constant.
 X=[A;X];
 
 
 Y=loadMNISTLabels('train-labels.idx1-ubyte');
-Y=Y(1:1000)';
+Y=Y(1:10000)';
 
 # We are considering the result as a binary thingy.
-for buga=1:1000,
-  if Y(buga)==1,
+for buga=1:10000,
+  if Y(buga)==0,
     Y(buga)=1;
    else 
     Y(buga)=0;
@@ -49,19 +49,19 @@ end
 # Now we write the gradient descent loop.
 function Z = gradientDescent(f,O,Y,X)
   for c=1:f,
-    k=newTheta(O,h(O,X),Y,X,1000,0.03);
+    k=newTheta(O,h(O,X),Y,X,10000,0.03);
     O=k;
   end;
     Z=O;
 end
 
-O=ones(1,785);
+O0=ones(1,785);
 
-O=gradientDescent(100000,O,Y,X);
+O0=gradientDescent(100000,O0,Y,X);
 
-O
+O0
 
-save Thetafor1.txt O -ascii;
-save Thetafor1Binary.dat O; 
+save Thetafor0.txt O0 -ascii;
+save Thetafor0Binary.dat O0; 
 
 
