@@ -10,7 +10,6 @@ To run on Windows.
 
 1.Install Octave from official octave website.
 
-
 2. Add octave to windows envirnment variable.
 
 
@@ -27,12 +26,10 @@ To run on Windows.
 
 
 
-
-octave NumberModule.m ImageName
+octave NumberModule.m image
 
 
 eg: if Image name is 5c.jpeg
-
 
 
 then
