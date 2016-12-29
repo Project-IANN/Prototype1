@@ -95,7 +95,7 @@ ans=-1;
 
 if k0>max,
      max=k0;
-     ans=1;
+     ans=0;
 end;
 if k>max,
       max=k;
