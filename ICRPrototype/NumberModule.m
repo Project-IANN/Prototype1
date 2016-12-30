@@ -5,7 +5,7 @@ Photo= imread(n);
 if size(Photo,3)==3,
     Photo=rgb2gray(Photo);
 else 
-  display("If Photo not in rgb or grayScale then program wil crash. Was busy eating laydh so did not write code to control the error");
+  display("If Photo not in rgb or grayScale then program wil crash");
 end;
 
 level = graythresh(Photo);
@@ -71,25 +71,25 @@ function per = h1(O,X)
 end
 
 k0=h1(O0,Photo);
-k0
+#k0
 k=h1(O,Photo);
-k
+#k
 k2=h1(O2,Photo);
-k2
+#k2
 k3=h1(O3,Photo);
-k3
+#k3
 k4=h1(O4,Photo);
-k4
+#k4
 k5=h1(O5,Photo);
-k5
+#k5
 k6=h1(O6,Photo);
-k6
+#k6
 k7=h1(O7,Photo);
-k7
+#k7
 k8=h1(O8,Photo);
-k8
+#k8
 k9=h1(O9,Photo);
-k9
+#k9
 
 max=0;
 ans=-1;
