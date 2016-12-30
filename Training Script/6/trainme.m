@@ -4,17 +4,17 @@ X=loadMNISTImages('train-images.idx3-ubyte');
 
 
 # We use 1000 datasets for our training. i.e m=1000.
-X=X(:,1:10000);
-A = ones(1,10000);
+#X=X(:,1:10000);
+A = ones(1,60000);
 #Adding x0=1 as for constant.
 X=[A;X];
 
 
 Y=loadMNISTLabels('train-labels.idx1-ubyte');
-Y=Y(1:10000)';
+Y=Y';
 
 # We are considering the result as a binary thingy.
-for buga=1:10000,
+for buga=1:60000,
   if Y(buga)==6,
     Y(buga)=1;
    else 
@@ -27,6 +27,7 @@ end;
 # O-A horizontal vector of the parameters that the gradient descent will find out.
 # X- A 2d array that contains all the Training set column wise. i.e each column represents a particular picture.
 # Returns a horizontal vector containing the result of hypothesis(b). 
+
 function b = h(O,X)
 
 z=O*X;
@@ -47,17 +48,26 @@ boo= O-((alpha*(1./m))*((b-Y)*X'));
 end
 
 # Now we write the gradient descent loop.
-function Z = gradientDescent(f,O,Y,X)
-  for c=1:f,
-    k=newTheta(O,h(O,X),Y,X,10000,0.03);
+function Z = gradientDescent(O,Y,X)
+odash=ones(1,785);
+truthvalue=true;
+count=0;
+  while truthvalue,
+    k=newTheta(O,h(O,X),Y,X,60000,0.01);
+    odash=O;
     O=k;
+	if size(O(odash-O>0.00001),2)<300,
+		truthvalue=false;
+	end;
+	count=count+1;
+	display(count);
   end;
     Z=O;
 end
 
-O6=ones(1,785);
+O6=rand(1,785);
 
-O6=gradientDescent(100000,O6,Y,X);
+O6=gradientDescent(O6,Y,X);
 
 O6
 

@@ -1,4 +1,5 @@
 pkg load image;
+
 n=argv(){1};
 Photo= imread(n);
 if size(Photo,3)==3,
@@ -95,7 +96,7 @@ ans=-1;
 
 if k0>max,
      max=k0;
-     ans=1;
+     ans=0;
 end;
 if k>max,
       max=k;

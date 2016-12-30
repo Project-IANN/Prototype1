@@ -38,3 +38,12 @@ then
 octave NumberModule.m 5c.jpeg
 
 
+#############################################################
+If you want to train the program 
+#############################################################
+
+1. Copy train-image.idx3-ubyte and train-labels.idx3-ubyte from training script folder to respective number folder 
+
+2. Run trainme.m from command line inside the respective number folder.
+
+
