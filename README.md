@@ -46,4 +46,8 @@ If you want to train the program
 
 2. Run trainme.m from command line inside the respective number folder.
 
+3. Copy the TheraforXBinary.dat file (where X is a binary number) to the 	  ICRPrototype folder.
+
+
+
 
