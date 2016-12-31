@@ -1,4 +1,6 @@
+warning('off','all');
 pkg load image;
+
 
 n=argv(){1};
 Photo= imread(n);
@@ -135,4 +137,5 @@ if k9>max,
       ans=9;
 end;
 
+display("The digit in the image :");
 display(ans);
