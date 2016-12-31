@@ -43,7 +43,7 @@ Photo = double(Photo);
 #  end;
 #end;
 
-save boo.dat Photo;
+#save boo.dat Photo;
 Photo=Photo/255;
 
 Photo=reshape(Photo,1,784);
