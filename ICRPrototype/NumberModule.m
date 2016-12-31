@@ -51,7 +51,7 @@ Photo=Photo';
 Photo = [1;Photo];
 Photo = Photo';
 
-save Test.dat Photo;
+#save Test.dat Photo;
 
 load Thetafor0Binary.dat
 load Thetafor1Binary.dat 
